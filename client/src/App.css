@@ -34,11 +34,21 @@
 
 .topBar {
   background-color: #61dafb;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
 }
 
 .sliderContainer {
-  width: 25%;
-  align-items: center;
+}
+
+.safeMode {
+  background-color: black;
+}
+
+.safeModeText {
+  font-size: 2rem;
+  color: white;
 }
 
 /* The following is all react toggle styling */

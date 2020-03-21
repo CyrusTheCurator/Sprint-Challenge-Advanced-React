@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import SearchResultsContainer from "./components/SearchResultsContainer";
 import ModeToggleSlider from "./components/ModeToggleSlider";
 import "./App.css";
 class App extends React.Component {
-  safeModeStatus = window.localStorage.getItem("safeMode") ? true : false;
   // Constructor with state ADD THIS BACK TO SAFEMODE PROP this.safeModeStatus
   constructor() {
     super();
@@ -14,7 +13,7 @@ class App extends React.Component {
   }
 
   handleSafeModeChange = e => {
-    this.setState(!e.target.value);
+    this.setState({ safeMode: true });
   };
 
   //
@@ -35,7 +34,10 @@ class App extends React.Component {
           safeMode={this.safeMode}
         />
 
-        <div>test</div>
+        <div className="safeModeText">
+          You are now safe. Stay indoors, Cough into your elbow, Binge React
+          podcasts
+        </div>
         <h1>Your Search Results</h1>
 
         <SearchResultsContainer searchResults={this.state.searchResults} />

@@ -6,8 +6,8 @@ export function useSafeMode(key, initialState) {
 
   useEffect(() => {
     safeMode
-      ? document.body.classList.add("safeMode")
-      : document.body.classList.remove("safeMode");
+      ? document.body.classList.add(key)
+      : document.body.classList.remove(key);
   }, [safeMode]);
 
   return [safeMode, setSafeMode];
